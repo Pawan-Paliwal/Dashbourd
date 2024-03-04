@@ -1,9 +1,7 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
+import { getUser } from "../controllers/general.js";
 
-router.get("/", (req, res) => {
-  // Your route handling logic here
-  res.send("Client route");
-});
+router.get("/user/:id", getUser);
 
-module.exports = router;
+export default router;

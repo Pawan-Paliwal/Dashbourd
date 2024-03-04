@@ -1,16 +1,20 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const mongoose = require("mongoose");
-const cors = require("cors");
-const helmet = require("helmet");
-const morgan = require("morgan");
-const dotenv = require("dotenv");
-const clientRoutes = require("./routes/client");
-const generalRoutes = require("./routes/general");
-const managementRoutes = require("./routes/management");
-const salesRoutes = require("./routes/sales");
+import express from "express";
+import bodyParser from "body-parser";
+import mongoose from "mongoose";
+import cors from "cors";
+import dotenv from "dotenv";
+import helmet from "helmet";
+import morgan from "morgan";
+import clientRoutes from "./routes/client.js";
+import generalRoutes from "./routes/general.js";
+import managementRoutes from "./routes/management.js";
+import salesRoutes from "./routes/sales.js";
 
-dotenv.config();
+///////////////////////
+///DATA IMPORT
+import User from "./model/User.js";
+import { dataUser } from "./data/user.js";
+
 const app = express();
 app.use(express.json());
 app.use(helmet());
@@ -30,14 +34,18 @@ app.use("/sales", salesRoutes);
 /////////////////////////////////////////
 // MONGOOSE SETUP
 
-const PORT = process.env.PORT || 9000;
+const PORT = 5001 || 9000;
 mongoose
-  .connect(process.env.MONGO_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(
+    "mongodb+srv://21114843:XO9WNWKNsEHVeV0V@cluster0.isdo082.mongodb.net/",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
   .then(() => {
     app.listen(PORT, () => console.log(`server listen on :${PORT}`));
+    // User.insertMany(dataUser);
   })
   .catch((error) => {
     console.log(error);
