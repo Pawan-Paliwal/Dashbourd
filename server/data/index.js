@@ -1,4 +1,4 @@
-export const dataAffiliateStat = [
+export const DataProduct = [
   {
     end_year: "",
     intensity: 6,

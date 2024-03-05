@@ -2,7 +2,6 @@ import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
-import dotenv from "dotenv";
 import helmet from "helmet";
 import morgan from "morgan";
 import clientRoutes from "./routes/client.js";
@@ -12,8 +11,10 @@ import salesRoutes from "./routes/sales.js";
 
 ///////////////////////
 ///DATA IMPORT
-import User from "./model/User.js";
-import { dataUser } from "./data/user.js";
+// import User from "./model/User.js";
+// import Product from "./model/Product.js";
+// import { dataUser } from "./data/user.js";
+// import { DataProduct } from "./data/index.js";
 
 const app = express();
 app.use(express.json());
@@ -45,7 +46,7 @@ mongoose
   )
   .then(() => {
     app.listen(PORT, () => console.log(`server listen on :${PORT}`));
-    // User.insertMany(dataUser);
+    // Product.insertMany(DataProduct);
   })
   .catch((error) => {
     console.log(error);
