@@ -93,7 +93,7 @@ const navItems = [
 
 const Sidebar = ({
   user,
-  drawerwidth,
+  drawerWidth,
   isSidebarOpen,
   isNonMobile,
   setIsSidebarOpen,
@@ -117,13 +117,13 @@ const Sidebar = ({
           variant="persistent"
           anchor="left"
           sx={{
-            width: drawerwidth,
+            width: drawerWidth,
             "& .MuiDrawer-paper": {
               color: theme.palette.secondary[200],
               backgroundColor: theme.palette.background.alt,
-              boxSizing: "border-box",
+              boxSixing: "border-box",
               borderWidth: isNonMobile ? 0 : "2px",
-              width: drawerwidth,
+              width: drawerWidth,
             },
           }}
         >
@@ -132,7 +132,7 @@ const Sidebar = ({
               <FlexBetween color={theme.palette.secondary.main}>
                 <Box display="flex" alignItems="center" gap="0.5rem">
                   <Typography variant="h4" fontWeight="bold">
-                    MUI CORE
+                    PWNVISION
                   </Typography>
                 </Box>
                 {!isNonMobile && (
@@ -152,6 +152,7 @@ const Sidebar = ({
                   );
                 }
                 const lcText = text.toLowerCase();
+
                 return (
                   <ListItem key={text} disablePadding>
                     <ListItemButton
