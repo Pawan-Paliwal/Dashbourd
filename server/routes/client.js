@@ -1,7 +1,13 @@
 import express from "express";
 const router = express.Router();
-import { func } from "../controllers/client.js";
+import {
+  getProducts,
+  getCustomers,
+  getTransactions,
+} from "../controllers/client.js";
 
-router.get("/products", func);
+router.get("/products", getProducts);
+router.get("/customers", getCustomers);
+router.get("/transaction", getTransactions);
 
 export default router;

@@ -15,12 +15,12 @@ import Header from "../../components/Header";
 import { useGetProductsQuery } from "../../state/api";
 // const Product = ({
 //   _id,
-//   name,
-//   description,
-//   price,
-//   rating,
-//   category,
-//   supply,
+//   title,
+//   insight,
+//   intensity,
+//   likelihood,
+//   sector,
+//   relevance,
 //   stat,
 // }) => {
 //   const theme = useTheme();
@@ -40,16 +40,16 @@ import { useGetProductsQuery } from "../../state/api";
 //           color={theme.palette.secondary[700]}
 //           gutterBottom
 //         >
-//           {category}
+//           {sector}
 //         </Typography>
 //         <Typography variant="h5" component="div">
-//           {name}
+//           {title}
 //         </Typography>
 //         <Typography sx={{ mb: "1.5rem " }} color={theme.palette.secondary[400]}>
-//           ${Number(price)}
+//           ${Number(intensity)}
 //         </Typography>
-//         <Rating value={rating} readOnly />
-//         <Typography variant="body2">{description}</Typography>
+//         <Rating value={likelihood} readOnly />
+//         <Typography variant="body2">{insight}</Typography>
 //       </CardContent>
 //       <CardActions>
 //         <Button
@@ -68,7 +68,7 @@ import { useGetProductsQuery } from "../../state/api";
 //       >
 //         <CardContent>
 //           <Typography>id: {_id}</Typography>
-//           <Typography>Supply left: {supply}</Typography>
+//           <Typography>Supply left: {relevance}</Typography>
 //           <Typography>
 //             Yearly sales this Yearl: {stat.yearlySalestotal}
 //           </Typography>
@@ -81,9 +81,9 @@ import { useGetProductsQuery } from "../../state/api";
 //   );
 // };
 
-const Products = () => {
+const Products = async () => {
   const { data, isLoading } = useGetProductsQuery();
-  console.log(data);
+  await console.log("data is coming from", data);
   // const isNonMobile = useMediaQuery("(min-width:100px)");
   // return (
   //   <Box m="1.5rem 2.5rem">
@@ -101,23 +101,23 @@ const Products = () => {
   //         {data.map(
   //           ({
   //             _id,
-  //             name,
-  //             description,
-  //             price,
-  //             rating,
-  //             category,
-  //             supply,
+  //             title,
+  //             insight,
+  //             intensity,
+  //             likelihood,
+  //             sector,
+  //             relevance,
   //             stat,
   //           }) => (
   //             <Product
   //               key={_id}
   //               _id={_id}
-  //               name={name}
-  //               description={description}
-  //               price={price}
-  //               rating={rating}
-  //               category={category}
-  //               supply={supply}
+  //               title={title}
+  //               insight={insight}
+  //               intensity={intensity}
+  //               likelihood={likelihood}
+  //               sector={sector}
+  //               relevance={relevance}
   //               stat={stat}
   //             />
   //           )
