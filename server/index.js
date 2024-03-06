@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
+
 import clientRoutes from "./routes/client.js";
 import generalRoutes from "./routes/general.js";
 import managementRoutes from "./routes/management.js";
@@ -11,10 +12,12 @@ import salesRoutes from "./routes/sales.js";
 
 ///////////////////////
 ///DATA IMPORT
-// import User from "./model/User.js";
-// import Product from "./model/Product.js";
-// import { dataUser } from "./data/user.js";
-// import { DataProduct } from "./data/index.js";
+import User from "./model/User.js";
+import Product from "./model/Product.js";
+import ProductStat from "./model/ProductStat.js";
+import { dataUser } from "./data/user.js";
+import { DataProduct } from "./data/index.js";
+import { dataProductStat } from "./data/dataProductStat.js";
 
 const app = express();
 app.use(express.json());
@@ -34,7 +37,6 @@ app.use("/sales", salesRoutes);
 
 /////////////////////////////////////////
 // MONGOOSE SETUP
-
 const PORT = 5001 || 9000;
 mongoose
   .connect(
@@ -47,6 +49,7 @@ mongoose
   .then(() => {
     app.listen(PORT, () => console.log(`server listen on :${PORT}`));
     // Product.insertMany(DataProduct);
+    // ProductStat.insertMany(dataProductStat);
   })
   .catch((error) => {
     console.log(error);
