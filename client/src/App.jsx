@@ -7,6 +7,14 @@ import { themeSettings } from "./theme";
 import Products from "./scenes/products";
 import Customers from "./scenes/customers";
 import Transaction from "./scenes/transactions";
+import Geography from "./scenes/geography";
+import OverView from "./scenes/overView";
+import Daily from "./scenes/daily";
+import Monthly from "./scenes/monthly";
+import Breakdown from "./scenes/breakdown";
+import Admin from "./scenes/admin";
+import Performance from "./scenes/performance";
+
 ///////////////////////////
 ////COMPONENTS
 import Dashboard from "./scenes/dashboard";
@@ -27,6 +35,13 @@ function App() {
               <Route path="/products" element={<Products />} />
               <Route path="/customers" element={<Customers />} />
               <Route path="/transactions" element={<Transaction />} />
+              <Route path="/geography" element={<Geography />} />
+              <Route path="/overview" element={<OverView />} />
+              <Route path="/daily" element={<Daily />} />
+              <Route path="/monthly" element={<Monthly />} />
+              <Route path="/breakdown" element={<Breakdown />} />
+              <Route path="/admin" element={<Admin />} />
+              <Route path="/performance" element={<Performance />} />
             </Route>
           </Routes>
         </ThemeProvider>

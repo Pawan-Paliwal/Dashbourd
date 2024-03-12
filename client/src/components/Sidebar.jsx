@@ -31,7 +31,6 @@ import {
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import FlexBetween from "./FlexBetween";
-import profileImage from "../assets/Pawan.png";
 const navItems = [
   {
     text: "Dashboard",
@@ -92,7 +91,6 @@ const navItems = [
 ];
 
 const Sidebar = ({
-  user,
   drawerWidth,
   isSidebarOpen,
   isNonMobile,
@@ -132,7 +130,7 @@ const Sidebar = ({
               <FlexBetween color={theme.palette.secondary.main}>
                 <Box display="flex" alignItems="center" gap="0.5rem">
                   <Typography variant="h4" fontWeight="bold">
-                    PWNVISION
+                    DASHBOARD
                   </Typography>
                 </Box>
                 {!isNonMobile && (

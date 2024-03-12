@@ -16,10 +16,15 @@ import User from "./model/User.js";
 import Transaction from "./model/Transaction.js";
 import Product from "./model/Product.js";
 import ProductStat from "./model/ProductStat.js";
+import OverallStat from "./model/OverallStat.js";
+import AffiliateStat from "./model/AffiliateStat.js";
+
 import { dataUser } from "./data/user.js";
 import { DataProduct } from "./data/index.js";
 import { dataProductStat } from "./data/dataProductStat.js";
 import { dataTransaction } from "./data/transaction.js";
+import { dataOverallStat } from "./data/dataOverallStats.js";
+import { dataAffiliateStat } from "./data/AffiliateStat.js";
 
 const app = express();
 app.use(express.json());
@@ -39,7 +44,7 @@ app.use("/sales", salesRoutes);
 
 /////////////////////////////////////////
 // MONGOOSE SETUP
-const PORT = 8001 || 9000;
+const PORT = 6001 || 9000;
 mongoose
   .connect(
     "mongodb+srv://21114843:XO9WNWKNsEHVeV0V@cluster0.isdo082.mongodb.net/",
@@ -54,6 +59,8 @@ mongoose
     // ProductStat.insertMany(dataProductStat);
     // User.insertMany(dataUser);
     // Transaction.insertMany(dataTransaction);
+    // OverallStat.insertMany(dataOverallStat);
+    // AffiliateStat.insertMany(dataAffiliateStat);
   })
   .catch((error) => {
     console.log(error);

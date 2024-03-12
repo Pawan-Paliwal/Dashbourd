@@ -1,9 +1,8 @@
 import express from "express";
+import { getAdmins, getUserPerformance } from "../controllers/management.js";
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  // Your route handling logic here
-  res.send("Client route");
-});
+router.get("/", getAdmins);
+router.get("/Performance/:id", getUserPerformance);
 
 export default router;
